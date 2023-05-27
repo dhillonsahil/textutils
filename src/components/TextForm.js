@@ -74,7 +74,7 @@ export default function TextForm(props) {
             <button className='btn btn-primary my-1 mx-2' onClick={handleRemoveSpace}>Remove Extra space</button>
             <div>
                 <h2 className="my-2">Your text Summary</h2>
-                <p>{text.split(" ").filter((element)=>{return element.length!==0}).length}   words and {text.length} letters</p>
+                <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length}   words and {text.length} letters</p>
                     <p>Time to read this is arround : {(text.length===0) || text.endsWith(' ')?Math.round(text.split(' ').filter((element)=>{return element.length!==0}).length*0.008*100)/100 :text.split(' ').length*0.008 }  Minutes </p>
             </div>
             </div>
